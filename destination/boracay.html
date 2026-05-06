@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boracay Travel Adventures</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+
+  <link rel="stylesheet" href="/portfolio/style.css">
+</head>
+
+<body>
+
+  
+
+<section class="hero">
+  <div class="overlay"></div>
+
+  <div class="container">
+
+    <!-- LEFT CONTENT -->
+    <div class="text">
+      <h1>Boracay Resort</h1>
+
+      <p class="description">
+        Boracay is a tropical paradise renowned for its fine white sand beaches and stunning turquoise waters. Located in Aklan, it offers relaxation and adventure—from sunsets to snorkeling, island hopping, and parasailing.
+      </p>
+
+      <br><br>
+      <a href="/portfolio/destination.html" class="side-btn">Back to Page</a>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="image">
+      <img src="/images/boracay.webp" alt="Boracay Beach">
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <p class="footer-year">© 2026 All Rights Reserved</p>
+
+    <div class="footer-links">
+
+      <!-- LOCATION -->
+      <div class="footer-column">
+        <h3>Location</h3>
+        <ul>
+          <li>Aklan Province</li>
+          <li>Western Visayas, Philippines</li>
+        </ul>
+      </div>
+
+      <!-- TOURIST ATTRACTIONS -->
+      <div class="footer-column">
+        <h3>Top Attractions</h3>
+        <ul>
+          <li>White Beach</li>
+          <li>Puka Shell Beach</li>
+          <li>Willy’s Rock</li>
+          <li>Island Hopping</li>
+          <li>Parasailing</li>
+        </ul>
+      </div>
+
+      <!-- ACTIVITIES -->
+      <div class="footer-column">
+        <h3>Activities</h3>
+        <ul>
+          <li>Snorkeling</li>
+          <li>Diving</li>
+          <li>Sunset Viewing</li>
+          <li>Banana Boat Ride</li>
+        </ul>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li>Travel Guide</li>
+          <li>Resort Info</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<style>
+/* RESET */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffffffcc, #ffffffcc),
+              url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size: cover;
+  background-position: center;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,183,255,0.2), rgba(255,255,255,0.7));
+}
+
+/* CONTAINER */
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 40px;
+}
+
+/* TEXT */
+.text {
+  max-width: 600px;
+  text-align: center;
+}
+
+.text h1 {
+  font-size: clamp(36px, 5vw, 48px);
+  color: #00aaff;
+  margin-bottom: 20px;
+}
+
+.text p {
+  font-size: 18px;
+  color: #0077b6;
+  line-height: 1.6;
+}
+
+/* IMAGE */
+.image img {
+  width: clamp(300px, 40vw, 500px);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* BUTTON */
+.side-btn {
+  display: inline-block;
+  background: #00aaff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.side-btn:hover {
+  background: #0077aa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image img {
+    width: 90%;
+  }
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+</body>
+</html>

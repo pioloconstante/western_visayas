@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- BACK BUTTON -->
+  <a href="/portfolio/buy.html" class="btn back-btn">← Back</a>
+
+  <div class="container">
+    <div class="product">
+
+      <!-- LEFT: IMAGE -->
+      <div class="product-image">
+        <img src="/img-buy/ati-atihan(aklan).jpg" alt="Product">
+      </div>
+
+      <!-- RIGHT: DETAILS -->
+      <div class="product-details">
+        <p class="breadcrumb">Products</p>
+
+        <h1>KALIBO ATI-ATIHAN FESTIVAL SOUVENIRS</h1>
+
+        <p class="description">
+         Kalibo Ati-Atihan souvenirs are cultural items inspired by the famous Ati-Atihan Festival, one of the oldest and most vibrant festivals in the Philippines. These souvenirs include tribal masks, bead accessories, keychains, mini drums, and colorful festival costumes that reflect the “Hala Bira!” spirit of celebration.
+        </p>
+
+        <div class="buttons">
+  <a href="/buydetails/comingsoon.html " class="btn primary">
+    BUY ONLINE
+  </a>
+</div>
+        
+
+        <div class="rating">
+          ★★★★☆ <span>4.8 / 5</span>
+        </div>
+
+        <!-- BENEFITS -->
+        <div class="benefits">
+          <h3>Where to Buy</h3>
+          <ul>
+           <li>Kalibo Public Market</li>
+           <li>Souvenir shops around Kalibo town proper</li>
+           <li>Ati-Atihan Festival stalls (during January festival season)</li>
+           <li>Airport and pasalubong stores in Aklan</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #1f3c88, #4facfe);
+}
+
+/* CENTER EVERYTHING */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+.back-btn {
+  align-self: flex-start;
+  margin-bottom: 15px;
+  background:#1f3c88;
+  color: white;
+  text-decoration: none; /* removes underline */
+  display: inline-block;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  width: 90%;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Layout */
+.product {
+  display: flex;
+  gap: 40px;
+}
+
+/* Image */
+.product-image img {
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Details */
+.product-details {
+  flex: 1;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: gray;
+}
+
+.product-details h1 {
+  font-size: 24px;
+  color: #1f3c88;
+}
+
+.description {
+  margin: 15px 0;
+  color: #333;
+}
+
+/* Buttons */
+.buttons {
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none; /* removes underline */
+}
+
+.primary {
+  background: #1f3c88;
+  color: white;
+}
+
+.secondary {
+  background: white;
+  border: 2px solid #1f3c88;
+  color: #1f3c88;
+}
+
+/* Rating */
+.rating {
+  margin: 10px 0;
+  color: #e91e63;
+  font-size: 18px;
+}
+
+/* Benefits */
+.benefits {
+  margin-top: 20px;
+  background: #1f3c88;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}</style>
+</body>
+</html>

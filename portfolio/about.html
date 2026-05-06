@@ -3,106 +3,481 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Western Visayas</title>
+<title>Minimal White Portfolio</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/portfolio/style.css">
 
+<style>
+
+/* ================= BASE ================= */
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  color:#0f172a;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* soft background glow */
+body::before{
+  content:"";
+  position:fixed;
+  width:400px;
+  height:400px;
+  background:rgba(37,99,235,0.08);
+  filter:blur(120px);
+  top:-100px;
+  left:-100px;
+  z-index:-1;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:400px;
+  height:400px;
+  background:rgba(124,58,237,0.06);
+  filter:blur(120px);
+  bottom:-100px;
+  right:-100px;
+  z-index:-1;
+}
+
+
+/* ================= LAYOUT ================= */
+body{ padding-top:80px; }
+
+/* ================= TITLE ================= */
+.section-title{
+  text-align:center;
+  margin:80px 0 30px;
+  font-weight:700;
+}
+
+.section-title::after{
+  content:"";
+  display:block;
+  width:50px;
+  height:3px;
+  background:#2563eb;
+  margin:10px auto;
+  border-radius:5px;
+}
+
+/* ================= CARDS ================= */
+.glass, .card{
+  background:white;
+  border:1px solid #eee;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  transition:0.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+/* hover lift */
+.glass:hover, .card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* shine effect */
+.card::before, .glass::before{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:-60%;
+  width:60%;
+  height:200%;
+  background:linear-gradient(120deg,transparent,rgba(37,99,235,0.08),transparent);
+  transform:rotate(25deg);
+  transition:0.6s;
+}
+
+.card:hover::before, .glass:hover::before{
+  left:120%;
+}
+
+/* ================= IMAGE ================= */
+.img-frame{
+  border-radius:15px;
+  overflow:hidden;
+  border:1px solid #eee;
+}
+
+.about-img{
+  width:100%;
+  transition:0.4s;
+}
+
+.img-frame:hover .about-img{
+  transform:scale(1.05);
+}
+
+/* ================= FORM ================= */
+.form-control{
+  border:1px solid #eee;
+  padding:10px;
+}
+
+
+/* ================= CONNECT ================= */
+.connect-icons a{
+  font-size:40px;
+  margin:0 12px;
+  color:#334155;
+  transition:0.3s;
+}
+
+.connect-icons a:hover{
+  color:#2563eb;
+  transform:translateY(-6px);
+}
+
+/* /* ================= FADE ANIMATION ================= */
+.fade{
+  opacity:0;
+  transform:translateY(40px) scale(0.98);
+  transition:0.8s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+
+/* Home button style */
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff; /* blue button */
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.home-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon spacing fix (optional if Font Awesome) */
+.home-btn i {
+    font-size: 14px;
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand text-white fw-bold" href="#">Western Visayas</a>
+    <a class="navbar-brand text-white fw-bold" href="#">My Porfolio</a>
 
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-       <div class="collapse navbar-collapse" id="navMenu">
+      <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="homepage.html">Home</a>
+          <a class="nav-link" href="#explore1">About Me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="destinaltion.html">Where to Go</a>
+          <a class="nav-link" href="#explore2">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="buy.html">What to Buy</a>
+          <a class="nav-link" href="#explore3">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="festival.html">Festivals & Events</a>
+          <a class="nav-link" href="#explore4">Resume</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="home-btn" href="homepage.html"><i class="fas fa-home"></i> Home</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
+</div>
+<hr class="clean-hr" id="explore1">
+<!-- ABOUT + CONNECT COMBINED -->
+<section class="container fade">
+  <h2 class="section-title">About Me</h2>
 
-<!-- HERO -->
-<section class="hero">
+  <div class="row g-4 align-items-center">
 
-  <div class="container hero-content text-center">
+    <!-- IMAGE -->
+    <div class="col-md-5">
+      <div class="img-frame">
+        <img src="/portfolio/por-img/me.jpg" class="about-img">
+      </div>
+    </div>
 
-    <h1 class="display-4 fw-bold mb-3">Region VI Western Visayas</h1>
-    <p class="lead mb-5">Discover islands, beaches, and cultural heritage</p>
+    <!-- TEXT -->
+    <div class="col-md-7">
 
-    <div class="row g-4 justify-content-center">
-
-      <!-- CARD 1 -->
-      <div class="col-md-4">
-        <div class="card shadow">
-          <img src="/images/boracay.webp" class="card-img-top preview-img">
-          <div class="card-body">
-            <h5>Where to Go 🌴</h5>
-            <p>Explore top tourist spots</p>
-          </div>
-          <div class="card-footer text-center">
-            <a href="destination.html" class="btn btn-primary">Explore</a>
-          </div>
-        </div>
+      <div class="glass mb-4">
+        <p class="card-text">
+              Hi, I am an Information Technology student at Olivarez College Tagaytay with a strong interest in web development and problem-solving.
+        </p>
+          <p class="card-text">
+              I have been developing my skills in HTML, CSS, Bootstrap, and basic JavaScript. I enjoy creating clean, functional, and user-friendly websites while continuously improving my knowledge in programming.
+          </p>
+            <p class="card-text">
+            My goal is to become a skilled and professional developer capable of building efficient and meaningful digital solutions.
+        </p>
       </div>
 
-      <!-- CARD 2 -->
-      <div class="col-md-4">
-        <div class="card shadow">
-          <img src="/images/gigantes.jpg" class="card-img-top preview-img">
-          <div class="card-body">
-            <h5>What to Buy 🛍️</h5>
-            <p>Discover local products and souvenirs</p>
-          </div>
-          <div class="card-footer text-center">
-            <a href="buy.html" class="btn btn-primary">Explore</a>
-          </div>
-        </div>
-      </div>
+      <!-- CONNECT INSIDE ABOUT -->
+      <div class="glass text-center">
+        <h5 class="mb-3">Connect with me</h5>
 
-      <!-- CARD 3 -->
-      <div class="col-md-4">
-        <div class="card shadow">
-          <img src="/images/miagao.jpg" class="card-img-top preview-img">
-          <div class="card-body">
-            <h5>Festivals & Events 🎉</h5>
-            <p>Experience culture and celebrations</p>
-          </div>
-          <div class="card-footer text-center">
-            <a href="festival.html" class="btn btn-primary">Explore</a>
-          </div>
+        <div class="connect-icons">
+          <a href="https://web.facebook.com/piolo.constante.5" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://github.com/pioloconstante" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/piolo_pascual/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
+
       </div>
 
     </div>
 
   </div>
-
 </section>
+<hr class="clean-hr" id="explore2">
+<!-- PORTFOLIO -->
+<section id="portfolio" class="container py-5">
+    <h2 class="section-title text-center mb-5">Portfolio</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/portfolio/por-img/connect4.png" class="card-img-top" alt="Connect 4">
+                <div class="card-body">
+                    <h5 class="card-title">Connect 4 Game</h5>
+                    <p class="card-text">Interactive two-player Connect 4 game built with HTML5 Canvas, CSS animation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/portfolio/por-img/miltea.png" class="card-img-top" alt="Milk Tea Shop">
+                <div class="card-body">
+                    <h5 class="card-title">Milk Tea Shop System</h5>
+                    <p class="card-text">Modern web-based POS system for milk tea shops with order management, menu display, and responsive Bootstrap interface.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/portfolio/por-img/blueboy.png" class="card-img-top" alt="Adventure Blue Boy">
+                <div class="card-body">
+                    <h5 class="card-title">Adventure Blue Boy (Java)</h5>
+                    <p class="card-text">2D platformer game developed in Java featuring character movement, collision detection, and level design using Swing graphics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="clean-hr" id="explore3">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- BLOGS -->
+<section id="blogs" class="container py-5" >
+    <h2 class="section-title text-center mb-5">Blogs</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="glass p-4 h-100">
+                <h5 class="blog-title">My Journey in Learning Web Development</h5>
+                <p>Learning web development has been both challenging and exciting. I started with basic HTML and CSS, where I learned how to structure and design simple web pages. At first, I struggled with layouts and positioning, but with practice, I became more comfortable.
+</p>
+                
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="glass p-4 h-100">
+                <h5 class="blog-title">Why Bootstrap Changed My Workflow</h5>
+                <p>Why I Use Bootstrap in My Projects
+
+Bootstrap is a powerful tool that helps developers create responsive and visually appealing websites quickly. Instead of writing all CSS from scratch, Bootstrap provides ready-made classes that simplify design. </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="glass p-4 h-100">
+                <h5 class="blog-title">Common Coding Mistakes I Overcame</h5>
+                <p>Common Mistakes I Made While Coding <br>As a beginner, I made many mistakes while coding, and each one helped me learn something new. One common mistake was forgetting to close HTML tags, which caused layout issues.</p>
+        </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="glass p-4 h-100">
+                <h5 class="blog-title">Mastering JavaScript Debugging</h5>
+                <p>How I Handle Errors in JavaScript
+<br>
+Working with JavaScript can be confusing, especially when something doesn’t work. There were times my code just didn’t run, and I didn’t know why.
+  </p>
+               
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="clean-hr" id="explore4">
+
+<!-- RESUME -->
+<section id="resume" class="container py-5" >
+    <h2 class="section-title text-center mb-5">Resume</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="glass p-5">
+                <div class="resume-section mb-4">
+                    <h4><i class="fas fa-graduation-cap text-primary me-2"></i>Education</h4>
+                    <p class="fw-bold">Bachelor of Science in Information Technology</p>
+                    <p>Olivarez College Tagaytay (OCT) | 2022 - Present</p>
+                </div>
+                <div class="resume-section mb-4">
+                    <h4><i class="fas fa-code text-primary me-2"></i>Skills</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fab fa-html5 text-danger me-2"></i>HTML5</li>
+                                <li><i class="fab fa-css3-alt text-info me-2"></i>CSS3</li>
+                                <li><i class="fab fa-bootstrap text-purple me-2"></i>Bootstrap 5</li>
+                            </ul>
+                </div>
+                <div class="resume-section">
+                    <h4><i class="fas fa-trophy text-primary me-2"></i>Projects & Achievements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Developed interactive Connect 4 game with HTML5 Canvas</li>
+                        <li class="list-group-item">Created responsive Milk Tea Shop web system</li>
+                        <li class="list-group-item">Built Java-based 2D platformer game</li>
+                        <li class="list-group-item">Consistent Dean's Lister - OCT (2023)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="clean-hr">
+
+<!-- CONTACT -->
+<section id="contact" class="container py-5">
+    <h2 class="section-title text-center mb-5">Contact Me</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="glass p-5">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="send-btn btn btn-primary btn-lg px-5">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>
+<!-- FOOTER -->
+<footer class="footer-modern">
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h2 class="footer-logo">Western Visayas</h2>
+      <p class="footer-text">
+        Experience paradise in the heart of the Philippines—white sand beaches, vibrant festivals, and unforgettable local flavors are waiting for you.
+      </p>
+
+      <div class="footer-social">
+         <a href="https://web.facebook.com/piolo.constante.5" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://github.com/pioloconstante" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/piolo_pascual/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- WHERE TO GO -->
+    <div class="footer-col">
+      <h3>Where to Go</h3>
+      <a href="destination.html">Destinations</a>
+      <a href="destination.html">Places</a>
+      <a href="destination.html">Travel Spots</a>
+    </div>
+
+    <!-- WHAT TO BUY -->
+    <div class="footer-col">
+      <h3>What to Buy</h3>
+      <a href="buy.html">Local Products</a>
+      <a href="buy.html">Souvenirs</a>
+      <a href="buy.html">Food & Goods</a>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="footer-col">
+      <h3>Festivals & Events</h3>
+      <a href="festival.html">Festivals</a>
+      <a href="festival.html">Cultural Events</a>
+      <a href="festival.html">Celebrations</a>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h3>About</h3>
+      <a href="about.html">About Me</a>
+      <a href="about.html">My Story</a>
+      <a href="about.html">Contact</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 | Constante, Piolo
+  </div>
+
+</footer>
+
+<!-- ANIMATION -->
+<script>
+const elements = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.15});
+
+elements.forEach(el => observer.observe(el));
+</script>
+<script src="/portfolio/script.js"></script>
 
 </body>
 </html>
