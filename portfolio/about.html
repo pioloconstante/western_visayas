@@ -11,7 +11,7 @@
 
 <style>
 
-/* ================= BASE ================= */
+/* Base */
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
@@ -21,7 +21,7 @@ body{
   scroll-behavior:smooth;
 }
 
-/* soft background glow */
+/* background */
 body::before{
   content:"";
   position:fixed;
@@ -47,10 +47,10 @@ body::after{
 }
 
 
-/* ================= LAYOUT ================= */
+/* LAYOUT */
 body{ padding-top:80px; }
 
-/* ================= TITLE ================= */
+/*TITLE*/
 .section-title{
   text-align:center;
   margin:80px 0 30px;
@@ -67,7 +67,7 @@ body{ padding-top:80px; }
   border-radius:5px;
 }
 
-/* ================= CARDS ================= */
+/*CARDS*/
 .glass, .card{
   background:white;
   border:1px solid #eee;
@@ -102,7 +102,7 @@ body{ padding-top:80px; }
   left:120%;
 }
 
-/* ================= IMAGE ================= */
+/*IMAGE*/
 .img-frame{
   border-radius:15px;
   overflow:hidden;
@@ -118,14 +118,14 @@ body{ padding-top:80px; }
   transform:scale(1.05);
 }
 
-/* ================= FORM ================= */
+/*FORM*/
 .form-control{
   border:1px solid #eee;
   padding:10px;
 }
 
 
-/* ================= CONNECT ================= */
+/*CONNECT*/
 .connect-icons a{
   font-size:40px;
   margin:0 12px;
@@ -138,7 +138,7 @@ body{ padding-top:80px; }
   transform:translateY(-6px);
 }
 
-/* /* ================= FADE ANIMATION ================= */
+/*FADE ANIMATION*/
 .fade{
   opacity:0;
   transform:translateY(40px) scale(0.98);
@@ -159,7 +159,7 @@ body{ padding-top:80px; }
     padding: 8px 16px;
     text-decoration: none;
     color: #ffffff;
-    background-color: #007bff; /* blue button */
+    background-color: #007bff; 
     border-radius: 6px;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -176,6 +176,14 @@ body{ padding-top:80px; }
 /* Icon spacing fix (optional if Font Awesome) */
 .home-btn i {
     font-size: 14px;
+}
+
+
+.nav-link{
+  color: #000080 !important;
+    font-weight: 600;
+    margin-left: 18px;
+    transition: 0.3s ease;
 }
 
 </style>
